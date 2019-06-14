@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<title><ui:insert name="titulo">ALT | Sistema Academia de Ginástica</ui:insert></title>
+
+	<h:outputStylesheet library="andreitoledo" name="styles/custom.css" />
+	<h:outputStylesheet library="andreitoledo" name="styles/layout.css" />
+	<h:outputStylesheet library="andreitoledo" name="styles/components.css" />
+
+	<h:outputScript target="body" library="primefaces"
+		name="jquery/jquery.js" />
+	<h:outputScript target="body" library="andreitoledo"
+		name="javascripts/app.js" />
+</h:head>
+
+<h:body>
+
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="andreitoledo" name="images/carregando.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<!-- inicio barra aw-topbar -->
+	<header class="aw-topbar">
+
+		<h:link outcome="/Inicio">
+			<h:graphicImage library="andreitoledo"
+				name="images/PsyConnect_barra.png" width="200" height="100" />
+		</h:link>
+
+
+		<!-- <div style="float: right; margin-right: 110px">
+			<span
+				style="float: left; height: 30px; line-height: 50px; margin-right: 60px">
+				Olá #{seguranca.nomeUsuario} ! </span>
+		</div> -->
+
+		<!-- <a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+		<a href="http://localhost:8080/6M-PsyConnect/j_spring_security_logout"
+			class="aw-sair"> <i class="fa  fa-sign-out"></i></a>
+		 -->
+
+		<!-- <div style="float: right; margin-right: 10px">
+			<span
+				style="float: left; height: 15px ;width: 50px ; line-height: 50px; margin-right: 60px">
+				<ui:include src="MenuAdmin.xhtml" />
+			</span>
+		</div>	 -->			
+
+	</header>
+
+
+	<!-- inicio barra aw-topbar2 -->
+	<header class="aw-topbar2">
+
+		<!-- 		<h:link outcome="/Inicio">
+			<h:graphicImage library="andreitoledo"
+				name="images/PsyConnect_barra.png" width="100" height="50" />
+		</h:link> -->
+
+
+		<div style="float: right; margin-right: 110px">
+			<span
+				style="margin-right: 60px" class="aw-cumprimento">
+				Olá #{seguranca.nomeUsuario} ! </span>
+		</div>
+
+		<a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+		<a href="http://localhost:8080/6M-PsyConnect/j_spring_security_logout"
+			class="aw-sair"> <i class="fa  fa-sign-out"></i></a>
+
+
+		<div style="float: right; margin-right: 10px">
+			<span
+				style="float: left" class="aw-btn-admin">
+				<ui:include src="MenuAdmin.xhtml" />
+			</span>
+		</div>
+
+
+	</header>
+
+
+	<!-- inicio menu lateral esquerdo -->
+	<aside class="aw-sidebar  js-sidebar">
+		<ui:include src="Menu.xhtml" />
+	</aside>
+
+	<section class="aw-content  js-content">
+		<ui:insert name="content" />
+	</section>
+
+	<footer>
+	    ALT | Sistema Academia de Ginástica - <i>andreitoledo.com</i>
+	</footer>
+
+</h:body>
+
+</html>

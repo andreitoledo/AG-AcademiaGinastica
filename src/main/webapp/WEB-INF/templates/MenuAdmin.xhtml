@@ -1,0 +1,52 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+
+		<h:outputStylesheet library="andreitoledo"
+			name="styles/components.css" />
+
+	</h:head>
+
+	<h:form>
+
+		<!-- <p:commandButton id="dynaButton" value="adm" type="button"
+			icon="pi pi-home" /> -->
+
+		<p:commandButton id="aw-btn-admin" value="" type="button" />
+
+		<p:menu overlay="true" trigger="aw-btn-admin" my="left top"
+			at="left bottom">
+			<p:submenu></p:submenu>
+			<p:submenu></p:submenu>
+			
+			<p:menuitem value="Pacientes"
+				outcome="/cadastros/entidades/paciente/PesquisaPacientes.xhtml" />
+			<p:separator></p:separator>
+			<p:menuitem value="Especialistas"
+				outcome="/cadastros/entidades/medico/PesquisaMedicos.xhtml" />
+			<p:separator></p:separator>
+			
+			<p:menuitem value="Especialidade Medica"
+				outcome="/cadastros/parametros/especialidadeMedica/PesquisaEspecialidadesMedicas.xhtml" />
+			<p:separator></p:separator>
+			<p:menuitem value="Tipo Pessoa"
+				outcome="/cadastros/parametros/tipoPessoa/PesquisaTiposPessoas.xhtml" />
+			<p:separator></p:separator>
+			<p:separator></p:separator>
+			<p:menuitem value="Grupo de Usuário"
+				outcome="/cadastros/parametros/grupo/PesquisaGrupos.xhtml" />
+			<p:menuitem value="Usuário"
+				outcome="/cadastros/parametros/usuario/PesquisaUsuarios.xhtml" />
+
+			<p:separator></p:separator>
+			<p:separator></p:separator>
+			<p:menuitem value="TELA INICIO" outcome="/Home.xhtml" />
+
+		</p:menu>
+
+	</h:form>
+
+</ui:composition>

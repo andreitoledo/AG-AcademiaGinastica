@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+<h:head>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<title><ui:insert name="titulo">6Minds - PsyConnect</ui:insert></title>
+
+	<h:outputStylesheet library="andreitoledo" name="styles/custom.css" />
+	<h:outputStylesheet library="andreitoledo" name="styles/layout.css" />
+	<h:outputStylesheet library="andreitoledo" name="styles/components.css" />
+
+	<h:outputScript target="body" library="primefaces"
+		name="jquery/jquery.js" />
+	<h:outputScript target="body" library="andreitoledo"
+		name="javascripts/app.js" />
+</h:head>
+
+<h:body>
+
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="andreitoledo" name="images/carregando.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+	<!-- inicio barra aw-topbar -->
+	<header class="aw-topbar">
+
+		<h:link outcome="/Inicio">
+			<h:graphicImage library="andreitoledo"
+				name="images/PsyConnect_barra.png" width="200" height="100" />
+		</h:link>
+
+	</header>
+
+	<!-- inicio barra aw-topbar2 -->
+	<header class="aw-topbar2">
+
+		<h:form id="frm" prependId="false">
+
+			<p:commandButton id="aw-cadastrar" value="Entrar ou Cadastrar"
+				ajax="false" action="/Login.xhtml"></p:commandButton>
+
+			<!-- 			<h2>Entrar ou Cadastrar <h:link value="Cadastrar" outcome="/Login.xhtml" /></h2> -->
+
+		</h:form>
+
+
+		<div style="float: right; margin-right: 110px">
+			<span
+				style="margin-right: 60px" class="aw-cumprimento">
+				Olá #{seguranca.nomeUsuario} ! </span>
+		</div>	
+
+		<a href="http://localhost:8080/6M-PsyConnect/j_spring_security_logout"
+			class="aw-sair"> <i class="fa  fa-sign-out"></i></a>
+
+	</header>
+
+	<section class="aw-contenthome  js-content">
+		<ui:insert name="contenthome" />
+	</section>
+
+	<footer>
+		6Minds | Sistema PsyConnect - <i>6minds.com.br</i>
+	</footer>
+
+</h:body>
+
+</html>
