@@ -1,5 +1,6 @@
 # AcademiaGinastica
-# Sistema Academia de Ginástica - TCC PÓS PUCMINAS
+# Sistema Academia de Ginástica 
+### TCC Engenharia de Software - PÓS PUCMINAS
 
 ### Sobre:
 O propósito geral é gerenciar as atividades de uma academia de ginástica.
