@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</f:facet>
 
-	<title><ui:insert name="titulo">ALT | Sistema Academia de Ginástica</ui:insert></title>
+	<title><ui:insert name="titulo">Sistema Academia de Ginástica</ui:insert></title>
 
 	<h:outputStylesheet library="andreitoledo" name="styles/custom.css" />
 	<h:outputStylesheet library="andreitoledo" name="styles/layout.css" />
@@ -37,29 +37,12 @@
 	<!-- inicio barra aw-topbar -->
 	<header class="aw-topbar">
 
-		<h:link outcome="/Inicio">
+<!-- logotipo academia -->
+		<!-- <h:link outcome="/Inicio">
 			<h:graphicImage library="andreitoledo"
 				name="images/PsyConnect_barra.png" width="200" height="100" />
-		</h:link>
-
-
-		<!-- <div style="float: right; margin-right: 110px">
-			<span
-				style="float: left; height: 30px; line-height: 50px; margin-right: 60px">
-				Olá #{seguranca.nomeUsuario} ! </span>
-		</div> -->
-
-		<!-- <a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
-		<a href="http://localhost:8080/6M-PsyConnect/j_spring_security_logout"
-			class="aw-sair"> <i class="fa  fa-sign-out"></i></a>
-		 -->
-
-		<!-- <div style="float: right; margin-right: 10px">
-			<span
-				style="float: left; height: 15px ;width: 50px ; line-height: 50px; margin-right: 60px">
-				<ui:include src="MenuAdmin.xhtml" />
-			</span>
-		</div>	 -->			
+		</h:link> -->
+	
 
 	</header>
 
@@ -80,16 +63,16 @@
 		</div>
 
 		<a href="#" class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
-		<a href="http://localhost:8080/6M-PsyConnect/j_spring_security_logout"
+		<a href="http://localhost:8080/AG-AcademiaGinastica/j_spring_security_logout"
 			class="aw-sair"> <i class="fa  fa-sign-out"></i></a>
 
-
-		<div style="float: right; margin-right: 10px">
+<!-- menu admin -->
+		<!-- <div style="float: right; margin-right: 10px">
 			<span
 				style="float: left" class="aw-btn-admin">
 				<ui:include src="MenuAdmin.xhtml" />
 			</span>
-		</div>
+		</div> -->
 
 
 	</header>
@@ -105,7 +88,7 @@
 	</section>
 
 	<footer>
-	    ALT | Sistema Academia de Ginástica - <i>andreitoledo.com</i>
+	    Sistema Academia de Ginástica
 	</footer>
 
 </h:body>

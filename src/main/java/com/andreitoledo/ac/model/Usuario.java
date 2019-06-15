@@ -18,9 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -38,7 +36,7 @@ public class Usuario implements Serializable {
 	@Column(nullable = false, length = 80)
 	private String nome;
 	@Column(nullable = false, unique = true, length = 255)
-	@Email(message="E-mail inválido ou já cadastrado.")
+	@Email(message = "E-mail inválido ou já cadastrado.")
 	private String email;
 	@Column(nullable = false, length = 20)
 	@NotBlank
@@ -47,11 +45,6 @@ public class Usuario implements Serializable {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "usuario_codigo"), inverseJoinColumns = @JoinColumn(name = "grupo_codigo"))
 	private List<Grupo> grupos = new ArrayList<>();
-	
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name = "codigo_tipoPessoa" , nullable = false)	
-	private TipoPessoa tipoPessoa;
 
 	public Long getCodigo() {
 		return codigo;
@@ -92,14 +85,6 @@ public class Usuario implements Serializable {
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 
-	}
-
-	public TipoPessoa getTipoPessoa() {
-		return tipoPessoa;
-	}
-
-	public void setTipoPessoa(TipoPessoa tipoPessoa) {
-		this.tipoPessoa = tipoPessoa;
 	}
 
 	@Override

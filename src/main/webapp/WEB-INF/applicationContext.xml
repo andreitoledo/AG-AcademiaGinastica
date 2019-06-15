@@ -57,14 +57,15 @@
 		<intercept-url pattern="/AcessoNegado.xhtml" access="isAuthenticated()" />
 		
 		<!-- 
-		<intercept-url pattern="/cadastros/entidades/paciente/**" access="hasAnyRole('ADMINISTRADORES')" />		
-		<intercept-url pattern="/cadastros/entidades/medico/**"	access="hasAnyRole('ADMINISTRADORES')" />		
-		<intercept-url pattern="/cadastros/parametros/especialidadeMedica/**" access="hasAnyRole('ADMINISTRADORES')" />
-		<intercept-url pattern="/cadastros/parametros/agenda/**" access="hasAnyRole('MEDICOS', 'ADMINISTRADORES')" />		
+		<intercept-url pattern="/cadastros/entidades/cliente/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />		
+		<intercept-url pattern="/cadastros/entidades/instrutor/**"	access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />		
+		<intercept-url pattern="/cadastros/parametros/aulasGrupo/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
+		<intercept-url pattern="/cadastros/parametros/pagtoCliente/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />		
+		<intercept-url pattern="/cadastros/parametros/avaliacaoFisica/**" access="hasAnyRole('MEDICOS', 'ADMINISTRADORES','RECEPCIONISTAS')" />
 		<intercept-url pattern="/cadastros/parametros/usuario/**" access="hasAnyRole('ADMINISTRADORES')" />
-		<intercept-url pattern="/cadastros/parametros/grupo/**" access="hasAnyRole('ADMINISTRADORES')" />
-		<intercept-url pattern="/cadastros/parametros/consultaMedica/**" access="hasAnyRole('PACIENTES', 'MEDICOS', 'ADMINISTRADORES')" />
-		<intercept-url pattern="/cadastros/parametros/tipoPessoa/**" access="hasAnyRole('ADMINISTRADORES')" /> 
+		<intercept-url pattern="/cadastros/parametros/grupo/**" access="hasAnyRole('ADMINISTRADORES')" />		
+		<intercept-url pattern="/cadastros/relatorios/matriculados/**" access="hasAnyRole('ADMINISTRADORES','GERENTES')" />
+		<intercept-url pattern="/cadastros/relatorios/inadimplentes/**" access="hasAnyRole('ADMINISTRADORES','GERENTES')" />
 		-->
 		
 		<intercept-url pattern="/**" access="denyAll" />
