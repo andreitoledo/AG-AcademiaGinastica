@@ -34,5 +34,4 @@ Plataforma Java EE.
 
 ### @author:
 Andrei Toledo andreiltoledo@hotmail.com
-
-Analista e Desenvolvedor de Sistemas, Programador Java EE.
+Analista e Desenvolvedor de Sistemas
