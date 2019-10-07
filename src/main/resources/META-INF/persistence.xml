@@ -3,6 +3,13 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	
 	<persistence-unit name="AndreiToledoPU" transaction-type="RESOURCE_LOCAL">
+	
+	<class>com.andreitoledo.ac.model.Cliente</class>
+	<class>com.andreitoledo.ac.model.Entidade</class>
+	<class>com.andreitoledo.ac.model.Grupo</class>
+	<class>com.andreitoledo.ac.model.Instrutor</class>
+	<class>com.andreitoledo.ac.model.TipoAtividade</class>
+	<class>com.andreitoledo.ac.model.Usuario</class>
 
 		<properties>		
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/academiaGinastica?serverTimezone=UTC"/>
@@ -11,13 +18,13 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
 			<property name="javax.persistence.schema-generation.database.action"
-				value="create" />
+				value="update" />
 				
 			<property name="javax.persistence.schema-generation.create-source"
 				value="metadata" />
 				
 			<!-- <property name="javax.persistence.sql-load-script-source" value="META-INF/sql/tipo_situacao.sql"/> -->
-
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>
