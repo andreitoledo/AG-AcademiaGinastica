@@ -57,6 +57,7 @@
 		<intercept-url pattern="/AcessoNegado.xhtml" access="isAuthenticated()" />
 		
 		<intercept-url pattern="/cadastros/entidades/cliente/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
+		<intercept-url pattern="/cadastros/parametros/tipoAtividade/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
 		<!-- 		
 		<intercept-url pattern="/cadastros/entidades/instrutor/**"	access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />		
 		<intercept-url pattern="/cadastros/parametros/aulasGrupo/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
