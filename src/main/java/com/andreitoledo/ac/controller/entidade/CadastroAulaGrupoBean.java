@@ -8,8 +8,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.andreitoledo.ac.dao.InstrutorDAO;
+import com.andreitoledo.ac.dao.SalaDAO;
 import com.andreitoledo.ac.model.AulaGrupo;
 import com.andreitoledo.ac.model.Instrutor;
+import com.andreitoledo.ac.model.Sala;
 import com.andreitoledo.ac.service.CadastroAulaGrupoService;
 import com.andreitoledo.ac.service.NegocioException;
 import com.andreitoledo.ac.util.jsf.FacesMessages;
@@ -27,8 +29,13 @@ public class CadastroAulaGrupoBean implements Serializable {
 
 	private List<Instrutor> instrutores;
 
+	private List<Sala> salas;
+
 	@Inject
 	private InstrutorDAO instrutorDAO;
+
+	@Inject
+	private SalaDAO salaDAO;
 
 	@Inject
 	private FacesMessages facesMessages;
@@ -40,6 +47,7 @@ public class CadastroAulaGrupoBean implements Serializable {
 		}
 
 		this.instrutores = this.instrutorDAO.buscarTodos();
+		this.salas = this.salaDAO.buscarTodos();
 	}
 
 	private void limpar() {
@@ -70,6 +78,10 @@ public class CadastroAulaGrupoBean implements Serializable {
 
 	public List<Instrutor> getInstrutores() {
 		return instrutores;
+	}
+
+	public List<Sala> getSalas() {
+		return salas;
 	}
 
 	public boolean isEditando() {

@@ -14,8 +14,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.primefaces.component.calendar.Calendar;
-
 /***
  * 
  * @author Andrei
@@ -57,7 +55,9 @@ public class AulaGrupo implements Serializable {
 	@Column(name = "dias_semana")
 	private Date diasSemana;
 
-	private String sala;
+	@ManyToOne
+	@JoinColumn(name = "codigo_sala")
+	private Sala sala;
 
 	public Long getCodigo() {
 		return codigo;
@@ -107,11 +107,11 @@ public class AulaGrupo implements Serializable {
 		this.diasSemana = diasSemana;
 	}
 
-	public String getSala() {
+	public Sala getSala() {
 		return sala;
 	}
 
-	public void setSala(String sala) {
+	public void setSala(Sala sala) {
 		this.sala = sala;
 	}
 

@@ -41,18 +41,23 @@
 				<p:column headerText="Descrição" priority="3">
 					<h:outputText value="#{aulaGrupo.descricao}" />
 				</p:column>
-				
-				<!-- <p:column headerText="Instrutor" priority="4">
-					<h:outputText value="#{aulaGrupo.descricao}" />
-				</p:column> -->
-				
+
 				<p:column headerText="Dia" priority="5">
 					<h:outputText value="#{aulaGrupo.diasSemana}" />
 				</p:column>
-				
+
 				<p:column headerText="Horário" priority="6">
-					<h:outputText value="#{aulaGrupo.horaInicio} às #{aulaGrupo.horaFim}" />
+					<h:outputText
+						value="#{aulaGrupo.horaInicio} às #{aulaGrupo.horaFim}" />
 				</p:column>
+
+				<p:column headerText="Instrutor" priority="4">
+					<h:outputText value="#{aulaGrupo.instrutorAlocado.nome}" />
+				</p:column>
+				
+				<p:column headerText="Sala" priority="7">
+					<h:outputText value="#{aulaGrupo.sala.descricao}" />
+				</p:column>				
 
 				<!-- botão editar -->
 				<p:column style="width: 100px; text-align: center">

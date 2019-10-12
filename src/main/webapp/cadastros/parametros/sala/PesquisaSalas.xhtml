@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/Layout.xhtml">
+
+	<ui:define name="titulo">Pesquisa salas</ui:define>
+
+	<ui:define name="content">
+		<f:metadata>
+			<f:viewAction action="#{cadastroSalaBean.inicializar}" />
+		</f:metadata>
+
+		<h2>| Sistema Academia | <SMALL>Manutenção de salas</SMALL></h2>
+
+		<h:form id="frmPesquisa">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:button value="Novo"
+						outcome="/cadastros/parametros/sala/CadastroSala" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:dataTable id="salasTable"
+				value="#{pesquisaSalaBean.salas}"
+				var="sala" style="margin-top: 20px"
+				emptyMessage="Nenhuma sala encontrada." rows="10"
+				paginator="true" paginatorAlwaysVisible="true"
+				paginatorPosition="bottom">
+
+				<p:column headerText="Código" priority="2"
+					style="text-align: center; width: 100px">
+					<h:outputText value="#{sala.codigo}" />
+				</p:column>
+
+				<p:column headerText="Descrição" priority="1">
+					<h:outputText value="#{sala.descricao}" />
+				</p:column>
+
+				<!-- botão editar -->
+				<p:column style="width: 100px; text-align: center">
+					<p:button outcome="CadastroSala" icon="ui-icon-pencil"
+						title="Editar">
+						<f:param name="sala" value="#{sala.codigo}" />
+					</p:button>
+					
+					<!-- botao excluir -->
+					<p:commandButton icon="ui-icon-trash" title="Excluir"
+						oncomplete="PF('confirmacaoExclusao').show()" process="@this"
+						update=":frmPesquisa:confirmacaoExclusaoDialog">
+						<f:setPropertyActionListener
+							target="#{pesquisaSalaBean.salaSelecionado}"
+							value="#{sala}" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+
+			<p:confirmDialog id="confirmacaoExclusaoDialog"
+				widgetVar="confirmacaoExclusao"
+				message="Tem certeza que deseja excluir a sala #{pesquisaSalaBean.salaSelecionado.descricao}?"
+				header="Exclusão da sala" severity="alert">
+				<p:button value="Não"
+					onclick="PF('confirmacaoExclusao').hide(); return false;" />
+				<p:commandButton value="Sim" update=":frmPesquisa:salasTable"
+					onclick="PF('confirmacaoExclusao').hide()"
+					action="#{pesquisaSalaBean.excluir}" />
+			</p:confirmDialog>
+		</h:form>
+	</ui:define>
+</ui:composition>

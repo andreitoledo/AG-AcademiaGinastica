@@ -78,10 +78,16 @@
 					<p:calendar id="diasSemana" size="10"
 						value="#{cadastroAulaGrupoBean.aulaGrupo.diasSemana}"
 						pattern="dd/MM/yyyy" />
-
-					<p:outputLabel value="Sala" for="sala" />
-					<p:inputText id="sala" size="60" maxlength="80" required="true"
-						value="#{cadastroAulaGrupoBean.aulaGrupo.sala}" />
+						
+						<p:outputLabel value="Sala" for="sala" />
+					<p:selectOneMenu id="sala"
+						value="#{cadastroAulaGrupoBean.aulaGrupo.sala}">
+						<f:selectItem itemLabel="Selecione" />
+						<f:selectItems value="#{cadastroAulaGrupoBean.salas}"
+							var="salas" itemLabel="#{salas.descricao}"
+							itemValue="#{salas}" />
+					</p:selectOneMenu>
+						
 				</p:panelGrid>
 
 			</div>

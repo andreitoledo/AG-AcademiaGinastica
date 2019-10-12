@@ -60,6 +60,7 @@
 		<intercept-url pattern="/cadastros/entidades/instrutor/**"	access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
 		<intercept-url pattern="/cadastros/parametros/tipoAtividade/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
 		<intercept-url pattern="/cadastros/parametros/aulaGrupo/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
+		<intercept-url pattern="/cadastros/parametros/sala/**" access="hasAnyRole('ADMINISTRADORES','RECEPCIONISTAS')" />
 		
 		<!-- 		
 		
